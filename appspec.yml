@@ -15,8 +15,8 @@ hooks:
    BeforeInstall:
     - location: scripts/beforeinstall.sh
       runas: root
-    - location: scripts/startapache.sh
+    - location: scripts/startserver.sh
       runas: root
    AfterInstall:
-    - location: scripts/restartapache.sh
+    - location: scripts/restartserver.sh
       runas: root
