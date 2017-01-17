@@ -2,7 +2,9 @@ version: 0.0
 os: linux
 files:
   - source: /index.html
-    destination: /var/www/lighttpd/project/    
+    destination: /var/www/lighttpd/project/ 
+  - source /conf/project.felipeferreira.net.conf
+    destination: /etc/lighttpd/vhosts.d/project.felipeferreira.net.conf
 permissions:
    - object: /var/www/lighttpd/project/    
      pattern: "**"
