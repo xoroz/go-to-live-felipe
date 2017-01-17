@@ -3,7 +3,7 @@ os: linux
 files:
   - source: /index.html
     destination: /var/www/lighttpd/project/
-hooks:
+# hooks:
 #  BeforeInstall:    
 #    - location: scripts/copyconf
 #      timeout: 300
