@@ -3,8 +3,20 @@ os: linux
 files:
   - source: /
     destination: /var/www/lighttpd/project/    
- hooks:
-  BeforeInstall:    
+permissions:
+   - object: /var/www/lighttpd/project/    
+     pattern: "**"
+     owner: lighttpd
+     group: lighttpd
+     mode: 755
+     type:
+       - file
+hooks:
+   BeforeInstall:
     - location: scripts/beforeinstall.sh
-      timeout: 300
+      runas: root
+    - location: scripts/startapache.sh
+      runas: root
+   AfterInstall:
+    - location: scripts/restartapache.sh
       runas: root
