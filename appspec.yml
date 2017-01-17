@@ -2,13 +2,12 @@ version: 0.0
 os: linux
 files:
   - source: /index.html
-    destination: /var/www/lighttpd/project/
-    overwrite: true
-# hooks:
-#  BeforeInstall:    
-#    - location: scripts/copyconf
-#      timeout: 300
-#      runas: root
+    destination: /var/www/lighttpd/project/    
+ hooks:
+  BeforeInstall:    
+    - location: scripts/beforeinstall.sh
+      timeout: 300
+      runas: root
 #  ApplicationStop:
 #    - location: scripts/stop_server
 #      timeout: 300
