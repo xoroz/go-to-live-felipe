@@ -1,5 +1,3 @@
-#!/bin/bash
-
 if [ -d /var/www/lighttpd/project/ ]; then
-    rm -rfv /var/www/lighttpd/project/*
+    rm -rf /var/www/lighttpd/project/*
 fi
