@@ -4,7 +4,7 @@ files:
   - source: /index.html
     destination: /var/www/lighttpd/project/ 
   - source /conf/project.felipeferreira.net.conf
-    destination: /etc/lighttpd/vhosts.d/project.felipeferreira.net.conf
+    destination: /etc/lighttpd/vhosts.d/
 permissions:
    - object: /var/www/lighttpd/project/    
      pattern: "**"
