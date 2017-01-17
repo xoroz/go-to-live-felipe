@@ -3,6 +3,7 @@ os: linux
 files:
   - source: /index.html
     destination: /var/www/lighttpd/project/
+    overwrite: true
 # hooks:
 #  BeforeInstall:    
 #    - location: scripts/copyconf
