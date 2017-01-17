@@ -16,9 +16,7 @@ permissions:
 hooks:
    BeforeInstall:
     - location: scripts/beforeinstall.sh
-      runas: root
-    - location: scripts/startserver.sh
-      runas: root
+      runas: root  
    AfterInstall:
     - location: scripts/restartserver.sh
       runas: root
