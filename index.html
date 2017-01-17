@@ -1,62 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<script src='https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js'></script>
 <style>
 table, th, td {
     border: 1px solid black;
 }
+pre {
+    white-space: pre-wrap;
+	tab-size: 2;
+	width: 50%;
+    overflow: auto;
+    border: 2px solid #aaa;
+    padding: 12px;
+    margin: 4px;	
+}
 </style>
 </head>
 <body>
-
-<table>
+<br><br>
+<div align="center">
+<table width=40% >
   <tr bgcolor="yellow">
     <th>Version</th>
     <th>Date</th>
   </tr>
-  <tr bgcolor="yellow">
-    <td>2.0</td>
-    <td>17/01/2017</td>
+  <tr bgcolor="yellow" align="center">
+    <td>2.1</td>
+    <td>17/01/2017 18:00</td>
   </tr>
 </table>
-<hr>
 
-<a href="http://project.felipeferreira.net/log/deploy-cmd.log"><b>Last Deploy Log</b></a>
-    
-<pre>
+<br>
+<a href="http://project.felipeferreira.net/log/deploylog.html" target="_blank">Check out the Deploy Log</a>
+
+<hr>
+<br>    
+
+<pre align="left">
 <b>Changelog:</b>
-    v.1.0 = simple copy files to server
-    v.1.1 = run scripts
-    v.1.2 = github configured to autodeploy on commit
-    v.2.0 = cleanup and documentation, link to deploylog
+
+ v.1.0 = simple copy files to server
+ v.1.1 = run scripts
+ v.1.2 = github configured to autodeploy on commit
+ v.2.0 = cleanup and documentation, link to deploylog
+ v.2.1 = better formating, sendemail
 </pre>    
     
-    <hr><br>
-    <h2>Project Xpeppers</h2>
+<hr><br>
+	
+<pre align="left">
+<b>AutoDeploy Project</b>
 
-Objective:
+ This is a project to have github commit to autodeploy using AWS CodeDeploy.
+ So when any changes occur on github it will deploy into this server.
 
-Have Code Deploy run from github and deploy in a new EC2 instance using Code Deploy.
-So when any changes occur on github it will auto-deploy into my server.
+ Project: <a href="http://project.felipeferreira.net"  target="_blank">http://project.felipeferreira.net</a>
+ GitHub Project <a href="https://github.com/xoroz/go-to-live-felipe/"  target="_blank">https://github.com/xoroz/go-to-live-felipe</a>
 
-Project:
-http://project.felipeferreira.net
+ References:
+ <a href="https://aws.amazon.com/blogs/devops/automatically-deploy-from-github-using-aws-codedeploy/"  target="_blank">automatically-deploy-from-github-using-aws-codedeploy</a>
+ <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/github-integ.html" target="_blank">github-integ</a>
+ <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-add-appspec-file.html?icmpid=docs_acd_console" target="_blank">AppSpec</a>
+ <a href="https://www.youtube.com/watch?v=N3saR9D7hq8" target="_blank">Video</a>
 
 
-References:
-https://aws.amazon.com/blogs/devops/automatically-deploy-from-github-using-aws-codedeploy/
-http://docs.aws.amazon.com/codedeploy/latest/userguide/github-integ.html
-
-AppSpec:
-http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-add-appspec-file.html?icmpid=docs_acd_console
-
-Video
-https://www.youtube.com/watch?v=N3saR9D7hq8
-   <hr><br>
+<br>
 <p>by Felipe Ferreira<br>
     http://felipeferreira.net</p>
-
+</pre>
+</div>
 </body>
 </html>
-
