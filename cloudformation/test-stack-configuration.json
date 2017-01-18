@@ -1,0 +1,9 @@
+{
+  "Parameters" : {
+    "DBName" : "WPTestDB",
+    "DBPassword" : "WPTestDBuser17",
+    "DBRootPassword" : "DBRootPassword17",
+    "DBUser" : "WPTestDBuser",    
+    "KeyName" : "WPTestEC2KeyName"
+  }
+}
