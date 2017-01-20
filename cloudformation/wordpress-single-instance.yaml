@@ -378,10 +378,29 @@ Mappings:
       HVMG2: ami-315f4850
       PV64: ami-d93622b8
 Resources:
+  myInternetGateway:
+    Type: AWS::EC2::InternetGateway    
   myVPC:
     Type: AWS::EC2::VPC
     Properties:
-      CidrBlock: !Ref VpcCIDR         
+      CidrBlock: !Ref VpcCIDR 
+  AttachGateway:
+    Type: AWS::EC2::VPCGatewayAttachment
+    DependsOn: myInternetGateway
+    Properties:
+      VpcId: !Ref myVPC
+      InternetGatewayId: !Ref myInternetGateway
+  RouteTable1:
+    Type: AWS::EC2::RouteTable    
+    Properties: 
+      VpcId: !Ref myVPC       
+  DefaultRoute1:
+    Type: AWS::EC2::Route
+    DependsOn: AttachGateway
+    Properties:
+      RouteTableId: !Ref RouteTable1
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref myInternetGateway
   PublicSubnet1: 
     Type: AWS::EC2::Subnet    
     Properties:
@@ -391,9 +410,10 @@ Resources:
       MapPublicIpOnLaunch: true    
   WebServer:
     Type: AWS::EC2::Instance
+    DependsOn: DefaultRoute1
     CreationPolicy:
       ResourceSignal:
-        Timeout: PT15M
+        Timeout: PT10M
     Metadata:
       AWS::CloudFormation::Init:
         configSets:
@@ -525,4 +545,4 @@ Outputs:
     Value: !Ref myVPC
   PublicSubnets:
     Description: A list of the public subnets
-    Value: !Ref PublicSubnet1
+Value: !Ref PublicSubnet1
