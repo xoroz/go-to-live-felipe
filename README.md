@@ -33,6 +33,6 @@ Contained in this repo
 
    **I love automation!**
 
-6. Once your solution is ready, please send us the link of your project.
+6. Once your solution is ready, please send us the link of your project..
 
  **http://project.felipeferreira.net**
